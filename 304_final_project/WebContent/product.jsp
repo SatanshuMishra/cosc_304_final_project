@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ray's Grocery - Product Information</title>
+<title>Bolu's Store - Product Information</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
 // Get product name to search for
 String productId = request.getParameter("id");
 
-String sql = "SELECT productId, productName, productPrice, productImageURL, productImage FROM Product P  WHERE productId = ?";
+String sql = "SELECT productId, productName, productPrice, productImageURL, productImage, productDesc FROM Product P  WHERE productId = ?";
 
 NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
@@ -40,8 +40,9 @@ try
 		out.println("<h2>"+rst.getString(2)+"</h2>");
 		
 		int prodId = rst.getInt(1);
+		String prodDesc = rst.getString(6);
 		out.println("<table><tr>");
-		out.println("<th>Id</th><td>" + prodId + "</td></tr>"				
+		out.println("<th>Year</th><td>" + prodDesc + "</td></tr>"				
 				+ "<tr><th>Price</th><td>" + currFormat.format(rst.getDouble(3)) + "</td></tr>");
 		
 		//  Retrieve any image with a URL

@@ -35,14 +35,11 @@ catch (SQLException ex)
 */
 %>
 
-  <option>Beverages</option>
-  <option>Condiments</option>
-  <option>Confections</option>
-  <option>Dairy Products</option>
-  <option>Grains/Cereals</option>
-  <option>Meat/Poultry</option>
-  <option>Produce</option>
-  <option>Seafood</option>       
+  <option>21st Century</option>
+  <option>20th Century</option>
+  <option>24th Century</option>
+  <option>23rd Century</option>
+  <option>22nd Century</option>      
   </select>
   <input type="text" name="productName" size="50">
   <input type="submit" value="Submit"><input type="reset" value="Reset"></p>
@@ -51,14 +48,11 @@ catch (SQLException ex)
 <%
 // Colors for different item categories
 HashMap<String,String> colors = new HashMap<String,String>();		// This may be done dynamically as well, a little tricky...
-colors.put("Beverages", "#0000FF");
-colors.put("Condiments", "#FF0000");
-colors.put("Confections", "#000000");
-colors.put("Dairy Products", "#6600CC");
-colors.put("Grains/Cereals", "#55A5B3");
-colors.put("Meat/Poultry", "#FF9900");
-colors.put("Produce", "#00CC00");
-colors.put("Seafood", "#FF66CC");
+colors.put("21st Century", "#0000FF");
+colors.put("20th Century", "#FF0000");
+colors.put("24th Century", "#000000");
+colors.put("23rd Century", "#6600CC");
+colors.put("22nd Century", "#55A5B3");
 %>
 
 <%
@@ -120,7 +114,7 @@ try
 	ResultSet rst = pstmt.executeQuery();
 	
 	out.print("<font face=\"Century Gothic\" size=\"2\"><table class=\"table\" border=\"1\"><tr><th class=\"col-md-1\"></th><th>Product Name</th>");
-	out.println("<th>Category</th><th>Price</th></tr>");
+	out.println("<th>Model</th><th>Price</th></tr>");
 	while (rst.next()) 
 	{
 		int id = rst.getInt(1);
